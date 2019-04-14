@@ -89,24 +89,27 @@
                     <div id="wrapper">
                         <div id="slider-wrap" >
                             <ul id="slider">
+                                @php
+                                    $posts = $posts = postInfo(2, 5, 'priority', 'desc');
+                                @endphp
                                 <li class="fa-img">
-                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                    <img src="{{ $post[0]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                    <img src="{{ $post[1]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                    <img src="{{ $post[2]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                    <img src="{{ $post[3]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                    <img src="{{ $post[4]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                             </ul>
@@ -123,7 +126,7 @@
                         </div>
                     </div>
                 </div>
-                <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+{{--                <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>--}}
                 <script type="text/javascript" src="js/slide.js"></script>
             </div>
             <div>
