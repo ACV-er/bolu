@@ -9,11 +9,13 @@ class PostController extends Controller
 {
     //
     public function getPostList(Request $request) {
-        $offset = $request->route('page');
+        $offset = $request->route('page') - 1;
 
-        Post::query()->where('type', $request->route('type'))->orderBy('updated_at', 'desc')
+        $result = Post::query()->where('type', $request->route('type'))->orderBy('updated_at', 'desc')
             ->offset($offset)->limit(10)
             ->get()->toArray();
+
+        return msg(0, $result);
     }
 
     private function handlData(Request $request) {

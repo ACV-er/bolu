@@ -14,25 +14,26 @@
     <script src="./js/jquery.SuperSlide.2.1.3.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/bl.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="background: url(./img/bg.jpg) no-repeat; background-size:100% 100%;">
 <div class="container">
     <!-- top -->
     <div class="bl_top">
         <div class="row">
-            <div class="col-sm-6"><img src="./img/bl.png" height="90px" style="margin-top:10px;"></div>
-            <div class="col-sm-2 bl_top_word"><img src="./img/wh.png" alt="" />意见反馈</div>
-            <div class="col-sm-2 bl_top_word"><img src="./img/person.png" alt="" />员工登录</div>
-            <div class="col-sm-2 bl_top_word"><img src="./img/ss.png" alt="" />查询更多</div>
+            <div><img src="./img/bl.png" height="90px" style="margin-top:10px;"></div>
+            <div class="clearfix bl_top_word"><img src="./img/wh.png" alt="" />意见反馈</div>
+            <div class="clearfix bl_top_word"><img src="./img/person.png" alt="" />员工登录</div>
+            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt="" />查询更多</div>
         </div>
         <div class="bl_top_nav">
             <ul class="list-inline clearfix bl_top_ul">
-                <li><a href="/" >首页</a></li>
-                <li class="bl_company_js">公司简介</li>
-                <li class="bl_EnterpriseDynamics_js">企业动态</li>
-                <li class="bl_product_js">产品中心</li>
-                <li class="bl_mall_js">博露商城</li>
-                <li class="bl_contact_js">联系我们</li>
+                <li><a href="./" >首页</a></li>
+                <li class="bl_company_js"><a href="?page=1">公司简介</a></li>
+                <li class="bl_EnterpriseDynamics_js"><a href="?page=2">企业动态</a></li>
+                <li class="bl_product_js"><a href="?page=3">产品中心</a></li>
+                <li class="bl_mall_js"><a href="?page=4">博露商城</a></li>
+                <li class="bl_contact_js"><a href="?page=5">联系我们</a></li>
             </ul>
         </div>
     </div>
@@ -45,26 +46,26 @@
         </ol>
 
         @php
-            $post = postInfo(1, 3, 'priority', 'desc');
+            $posts = postInfo(1, 3, 'priority', 'desc');
         @endphp
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{ $post[0]->img }}" width="100%">
+                <img src="{{ $posts[0]->img }}"/>
                 <div class="carousel-caption bl_company_banner_word">
-                    {{ $post[0]->content  }}
+                    {{ $posts[0]->content }}
                 </div>
             </div>
             <div class="item">
-                <img src="{{ $post[1]->img }}" width="100%">
+                <img src="{{ $posts[1]->img }}"/>
                 <div class="carousel-caption bl_company_banner_word">
-                    {{ $post[1]->content  }}
+                    {{ $posts[1]->content }}
                 </div>
             </div>
             <div class="item">
-                <img src="{{ $post[2]->img }}" width="100%">
+                <img src="{{ $posts[2]->img }}"/>
                 <div class="carousel-caption bl_company_banner_word" >
-                    {{ $post[2]->content  }}
+                    {{ $posts[2]->content }}
                 </div>
             </div>
         </div>
@@ -81,9 +82,50 @@
     </div>
 
     <!-- 公司简介 -->
-    <div class="bl_company">
+    <div class="bl_company" id="bl_company">
         <div class="bl_company_word text-center clearfix">
-            <div></div>
+            <div>
+                <div class="jq22-container">
+                    <div id="wrapper">
+                        <div id="slider-wrap" >
+                            <ul id="slider">
+                                <li class="fa-img">
+                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                </li>
+
+                                <li class="fa-img">
+                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                </li>
+
+                                <li class="fa-img">
+                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                </li>
+
+                                <li class="fa-img">
+                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                </li>
+
+                                <li class="fa-img">
+                                    <img src="./img/pic.jpg" class="fa fa-image fa_img"/>
+                                </li>
+
+                            </ul>
+                            <!--controls-->
+                            <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+                            <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+                            <div id="counter"></div>
+
+                            <div id="pagination-wrap">
+                                <ul>
+                                </ul>
+                            </div>
+                            <!--controls-->
+                        </div>
+                    </div>
+                </div>
+                <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+                <script type="text/javascript" src="js/slide.js"></script>
+            </div>
             <div>
                 <ul>
                     <li>农业一直为生活创造绿色</li>
@@ -94,43 +136,41 @@
         </div>
         <div class="bl_company_wordAndP ">
             <div class="list-inline clearfix text-center">
-                <span><img src="./img/company1.png" width="120px"></span>
+                <span><img src="./img/company1.png" width="120px" /></span>
                 1992-至今
-                <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
+                <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
                 <div class="bl_company_wordAndP_learnMore">Learn More ></div>
             </div>
             <div class="list-inline clearfix text-center">
-                <span><img src="./img/company2.png" width="114px"></span>
+                <span><img src="./img/company2.png" width="114px" /></span>
                 企业资质
-                <div style="height: 400px;">上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
+                <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海路333号，多年来，面向上海市区及南部杭州湾，依托地理优势水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
                 <div class="bl_company_wordAndP_learnMore">Learn More ></div>
             </div>
             <div class="list-inline clearfix text-center">
-                <span><img src="./img/company3.png"></span>
+                <span><img src="./img/company3.png" /></span>
                 绿色博露
-                <div style="height: 425px;">上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
+                <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
+                <div class="bl_company_wordAndP_learnMore clearfix">Learn More ></div>
             </div>
         </div>
         <div class="clearfix" style="float: left;margin-top: 80px; margin-bottom: 40px;">
             <img src="./img/pic.jpg" width="70%" />
             <div class="list-inline clearfix text-center" style="position: absolute;bottom:180px;right:50px;width: 400px;height: 300px;border: 1px solid black;
-				box-shadow: 2px 2px 2px 2px;background: white;">
+				box-shadow: rgba(0,0,0,.8) 0 0 100px;background: white;">
                 <div>绿色博露</div>
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
             </div>
         </div>
     </div>
-
-
-
     <!-- 企业动态 -->
-    <div class="bl_EnterpriseDynamics">
+    <div class="bl_EnterpriseDynamics" id="bl_EnterpriseDynamics">
 
     </div>
 
 
     <!-- 产品中心 -->
-    <div class="bl_product">
+    <div class="bl_product" id="bl_product">
         <div class="text-center">
             <ul class="bl_product_ul list-inline clearfix">
                 <li><img src="./img/bl_product_ul.png" width="70px" />博露大米</li>
@@ -164,8 +204,8 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" class="text-center">
                             <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Another </a></li>
+                            <li><a href="#">Somethin</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">Separated link</a></li>
                         </ul>
@@ -202,7 +242,7 @@
     <div class="bl_mall"></div>
     <!-- 联系我们 -->
 
-    <div class="bl_contact">
+    <div class="bl_contact" id="bl_contact">
         <div></div>
         <div>
             <ul>
@@ -232,7 +272,6 @@
                     <li><img src="./img/wxgzh.png" alt="" width="200px"/><div>微信公众号</div></li>
                     <li><img src="./img/rgfw.png" alt="" width="200px"/><div>人工服务</div></li>
                 </ul>
-
             </div>
         </div>
 
@@ -240,7 +279,7 @@
 </div>
 <!-- footer -->
 <div class="container footerBottom footerTop text-center">
-    <ul class="footerBottom_left clearfix">
+    <ul class="clearfix">
         <li>联系公司</li>
         <li>Follow Us</li>
         <li><img src="./img/bl_bottomLeft.png" width="80%" /></li>
@@ -256,7 +295,6 @@
         <li><img src="./img/bl_bottomRight.png" width="80%" /></li>
     </ul>
 </div>
-
 
 </body>
 </html>

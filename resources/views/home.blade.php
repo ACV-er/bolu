@@ -48,7 +48,7 @@
         }
         .bl_nav_ul_li {
             top: 16%;
-            font-size: 25px;
+            font-size: 22px;
             left: 25%;
         }
         .bl_nav_ul_li li a,
@@ -113,11 +113,11 @@
             <div class="bl_nav_ul">
                 <ul class="list-inline clearfix col-sm-8 bl_nav_ul_li">
                     <li><a href="./">首页</a></li>
-                    <li><a href="./bl">公司简介</a></li>
-                    <li><a href="./bl">企业动态</a></li>
-                    <li><a href="./bl">产品中心</a></li>
-                    <li><a href="./bl">博露商城</a></li>
-                    <li><a href="./bl">联系我们</a></li>
+                    <li><a href="./bl?page=1">公司简介</a></li>
+                    <li><a href="./bl?page=2">企业动态</a></li>
+                    <li><a href="./bl?page=3">产品中心</a></li>
+                    <li><a href="./bl?page=4">博露商城</a></li>
+                    <li><a href="./bl?page=5" id="bl_c">联系我们</a></li>
                 </ul>
             </div>
             <div class="col-sm-3 bl_nav_hr2"></div>
