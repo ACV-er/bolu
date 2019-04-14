@@ -1,5 +1,6 @@
 .item img {
-	width: 100%;
+	width: 1200px;
+    height: 485px !important;
 }
 .container {
 	width: 1200px !important;
