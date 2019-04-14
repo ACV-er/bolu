@@ -11,17 +11,18 @@
 |
 */
 use \Illuminate\Support\Facades\Route;
+Route::group(['middleware' => 'cookie'], function () {
+    Route::get('/', function () {
+        return view('home');
+    });
 
-Route::get('/', function () {
-    return view('home');
+    Route::get('/bl', function () {
+        return view('bolu');
+    });
+
+    Route::get('/posts/{type}/{page}', "PostController@getPostList")->where(['id' => '[0-9]+', 'type' => '[0-9]+']);
+
+    Route::put('/post', "PostController@submitPost");
+    Route::post('/post/{id}', "PostController@updatePost")->where(['id' => '[0-9]+']);
+    Route::delete('/post/{id}', "PostController@delPost")->where(['id' => '[0-9]+']);
 });
-
-Route::get('/bl', function () {
-    return view('bolu');
-});
-
-Route::get('/posts/{type}/{page}', "PostController@getPostList")->where(['id' => '[0-9]+', 'type' => '[0-9]+']);
-
-Route::put('/post', "PostController@submitPost");
-Route::post('/post/{id}', "PostController@updatePost")->where(['id' => '[0-9]+']);
-Route::delete('/post/{id}', "PostController@delPost")->where(['id' => '[0-9]+']);
