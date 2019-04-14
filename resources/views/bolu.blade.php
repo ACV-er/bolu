@@ -93,23 +93,23 @@
                                     $posts = $posts = postInfo(2, 5, 'priority', 'desc');
                                 @endphp
                                 <li class="fa-img">
-                                    <img src="{{ $post[0]->img  }}" class="fa fa-image fa_img"/>
+                                    <img src="{{ $posts[0]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="{{ $post[1]->img  }}" class="fa fa-image fa_img"/>
+                                    <img src="{{ $posts[1]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="{{ $post[2]->img  }}" class="fa fa-image fa_img"/>
+                                    <img src="{{ $posts[2]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="{{ $post[3]->img  }}" class="fa fa-image fa_img"/>
+                                    <img src="{{ $posts[3]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                                 <li class="fa-img">
-                                    <img src="{{ $post[4]->img  }}" class="fa fa-image fa_img"/>
+                                    <img src="{{ $posts[4]->img  }}" class="fa fa-image fa_img"/>
                                 </li>
 
                             </ul>
