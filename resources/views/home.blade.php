@@ -10,6 +10,8 @@
     <script src="./lib/html5shiv/html5shiv.min.js"></script>
     <script src="./lib/respond/respond.js"></script>
     <![endif]-->
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             overflow: hidden;
@@ -24,7 +26,7 @@
             position: absolute;
         }
         .bl_nav {
-            background: url(./img/background2.jpg) no-repeat;
+            background: url(./img/background.jpg) no-repeat;
             background-size: 100% 100%;
             height: 100%;
             width: 100%;
@@ -65,13 +67,16 @@
         }
 
         .bl_banner_img {
+            top: 5%;
             left: 30%;
-            top: 35%;
+            height: 5%;
+            line-height: 600px;
         }
         .bl_banner_img img {
             margin-left: 3%;
             width: 8%;
             border-radius: 50%;
+            vertical-align: center;
         }
         /* .bl_banner_img img:nth-child(2) {
             width: 20%;
@@ -81,16 +86,23 @@
             width: 10%;
         } */
         /* footer */
+        .bl_footer {
+            display: none;
+        }
         .bl_footer .row > div {
             bottom: 2%;
         }
         .bl_footer div div {
-            font-size: 25px;
+            font-size: 18px;
         }
         .bl_footer .row > div a,
         .bl_footer .row > div a:focus,
         .bl_footer .row > div a:hover {
             color: black;
+            text-decoration: none;
+        }
+        .bl_footer .row > div a:hover {
+            color: lightblue;
         }
         .bl_footer .row > div:nth-child(2) {
             left: 25%;
@@ -105,19 +117,19 @@
 </head>
 <body>
 <!-- 导航栏 -->
-<div class="container bl_nav">
+<div class="container bl_nav" id="bl_nav">
     <div class="row">
         <div class="col-sm-5 bl_nav_write"><img src="./img/name.png"></div>
         <div>
             <div class="col-sm-3 bl_nav_hr1"></div>
             <div class="bl_nav_ul">
                 <ul class="list-inline clearfix col-sm-8 bl_nav_ul_li">
-                    <li><a href="./">首页</a></li>
-                    <li><a href="./bl?page=1">公司简介</a></li>
-                    <li><a href="./bl?page=2">企业动态</a></li>
-                    <li><a href="./bl?page=3">产品中心</a></li>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="./bl">公司简介</a></li>
+                    <li><a href="./bl_EnterpriseDynamics">企业动态</a></li>
+                    <li><a href="./bl_product">产品中心</a></li>
                     <li><a href="./bl?page=4">博露商城</a></li>
-                    <li><a href="./bl?page=5" id="bl_c">联系我们</a></li>
+                    <li><a href="./bl_contact" id="bl_c">联系我们</a></li>
                 </ul>
             </div>
             <div class="col-sm-3 bl_nav_hr2"></div>
@@ -128,9 +140,9 @@ banner
 <div class="container-fluid bl_banner">
     <div class="row">
         <div class="col-sm-12 bl_banner_img">
-            <img src="./img/grassplotSmall.png" />
-            <img src="./img/rice.png" />
-            <img src="./img/mallSmall.png" />
+            <a href="#"><img src="./img/grassplotSmall.png" /></a>
+            <a href="#"><img src="./img/rice.png"/></a>
+            <a href="#"><img src="./img/mallSmall.png" /></a>
         </div>
     </div>
 </div>
@@ -147,7 +159,22 @@ banner
                 <p class="text-center">Friendship Link</p></a></div>
     </div>
 </div>
-<script src="./lib/jquery/jquery.min.js"></script>
-<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        var nav = document.getElementById('bl_nav');
+        $('.bl_banner_img').children("a").children("img").on("mouseenter",function() {
+            $(this).animate({"width":"12%"},200);
+        })
+        $('.bl_banner_img').children("a").children("img").on("mouseleave",function() {
+            $(this).animate({"width":"8%"},200);
+        })
+        nav.onmousewheel = function () {
+            $(".bl_nav").animate({"height":"85%"},300,function() {
+                $('.bl_footer').show(300);
+            });
+        }
+    })
+</script>
 </body>
 </html>

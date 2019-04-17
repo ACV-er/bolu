@@ -19,6 +19,18 @@ Route::group(['middleware' => 'cookie'], function () {
     Route::get('/bl', function () {
         return view('bolu');
     });
+    Route::get('/bl_product', function () {
+        return view('bl_product');
+    });
+    Route::get('/bl_EnterpriseDynamics', function () {
+        return view('bl_EnterpriseDynamics');
+    });
+    Route::get('/bl_contact', function () {
+        return view('bl_contact');
+    });
+    Route::get('/article', function () {
+        return view('article');
+    });
 
     Route::get('/posts/{type}/{page}', "PostController@getPostList")->where(['id' => '[0-9]+', 'type' => '[0-9]+']);
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>博露官网</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -10,30 +10,30 @@
     <script src="./lib/respond/respond.js"></script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="./css/bl.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="./lib/jquery/jquery.min.js"></script>
-    <script src="./js/jquery.SuperSlide.2.1.3.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/bl.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="./js/demo.js"></script>
 </head>
 <body style="background: url(./img/bg.jpg) no-repeat; background-size:100% 100%;">
 <div class="container">
     <!-- top -->
     <div class="bl_top">
         <div class="row">
-            <div><img src="./img/bl.png" height="90px" style="margin-top:10px;"></div>
+            <div class="bl_icon"><img src="./img/bl.png" height="90px" style="margin-top:10px;margin-left: 15px"></div>
             <div class="clearfix bl_top_word"><img src="./img/wh.png" alt="" />意见反馈</div>
             <div class="clearfix bl_top_word"><img src="./img/person.png" alt="" />员工登录</div>
-            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt="" />查询更多</div>
+            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt="" /><span class="bl_cx">查询更多</span><input type="" placeholder="请输入你想搜索的内容···" class="bl_cx_k clearfix"></div>
         </div>
         <div class="bl_top_nav">
             <ul class="list-inline clearfix bl_top_ul">
-                <li><a href="./" >首页</a></li>
-                <li class="bl_company_js"><a href="?page=1">公司简介</a></li>
-                <li class="bl_EnterpriseDynamics_js"><a href="?page=2">企业动态</a></li>
-                <li class="bl_product_js"><a href="?page=3">产品中心</a></li>
+                <li><a href="/" >首页</a></li>
+                <li class="bl_company_js"><a href="bl">公司简介</a></li>
+                <li class="bl_EnterpriseDynamics_js"><a href="bl_EnterpriseDynamics">企业动态</a></li>
+                <li class="bl_product_js"><a href="bl_product">产品中心</a></li>
                 <li class="bl_mall_js"><a href="?page=4">博露商城</a></li>
-                <li class="bl_contact_js"><a href="?page=5">联系我们</a></li>
+                <li class="bl_contact_js"><a href="bl_contact">联系我们</a></li>
             </ul>
         </div>
     </div>
@@ -46,26 +46,26 @@
         </ol>
 
         @php
-            $posts = postInfo(1, 3, 'priority', 'desc');
+            $posts = postInfo(1, 3, "priority", "desc");
         @endphp
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="{{ $posts[0]->img }}"/>
-                <div class="carousel-caption bl_company_banner_word">
-                    {{ $posts[0]->content }}
+                <img src="{{ $posts[0]->img  }}"/>
+                <div class="carousel-caption bl_company_banner_word ajax_company_1" >
+
                 </div>
             </div>
             <div class="item">
-                <img src="{{ $posts[1]->img }}"/>
-                <div class="carousel-caption bl_company_banner_word">
-                    {{ $posts[1]->content }}
+                <img src="{{ $posts[1]->img  }}"/>
+                <div class="carousel-caption bl_company_banner_word ajax_company_2">
+
                 </div>
             </div>
             <div class="item">
-                <img src="{{ $posts[2]->img }}"/>
-                <div class="carousel-caption bl_company_banner_word" >
-                    {{ $posts[2]->content }}
+                <img src="{{ $posts[2]->img  }}"/>
+                <div class="carousel-caption bl_company_banner_word ajax_company_3">
+
                 </div>
             </div>
         </div>
@@ -77,7 +77,8 @@
         </a>
         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span class="sr-only">
+			    </span>
         </a>
     </div>
 
@@ -90,28 +91,11 @@
                         <div id="slider-wrap" >
                             <ul id="slider">
                                 @php
-                                    $posts = $posts = postInfo(2, 5, 'priority', 'desc');
+                                    $posts = postInfo(2, 5, "priority", "desc");
+                                    foreach ($posts as $post) {
+                                        echo "<li class=\"fa-img\"><img src=\"$post->img\" class=\"fa fa-image fa_img\"/></li>";
+                                    }
                                 @endphp
-                                <li class="fa-img">
-                                    <img src="{{ $posts[0]->img  }}" class="fa fa-image fa_img"/>
-                                </li>
-
-                                <li class="fa-img">
-                                    <img src="{{ $posts[1]->img  }}" class="fa fa-image fa_img"/>
-                                </li>
-
-                                <li class="fa-img">
-                                    <img src="{{ $posts[2]->img  }}" class="fa fa-image fa_img"/>
-                                </li>
-
-                                <li class="fa-img">
-                                    <img src="{{ $posts[3]->img  }}" class="fa fa-image fa_img"/>
-                                </li>
-
-                                <li class="fa-img">
-                                    <img src="{{ $posts[4]->img  }}" class="fa fa-image fa_img"/>
-                                </li>
-
                             </ul>
                             <!--controls-->
                             <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
@@ -126,14 +110,13 @@
                         </div>
                     </div>
                 </div>
-{{--                <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>--}}
                 <script type="text/javascript" src="js/slide.js"></script>
             </div>
             <div>
-                <ul>
+                <ul style="margin-left: 50px;margin-top: 8px;">
                     <li>农业一直为生活创造绿色</li>
-                    <li>打造更美好的生态农业</li>
-                    <li>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</li>
+                    <li style="margin-left: 65px;">打造更美好的生态农业</li>
+                    <li style="font-size: 20px; width:350px;margin-left: 140px;margin-top: 30px;">上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</li>
                 </ul>
             </div>
         </div>
@@ -142,143 +125,34 @@
                 <span><img src="./img/company1.png" width="120px" /></span>
                 1992-至今
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
-                <div class="bl_company_wordAndP_learnMore">Learn More ></div>
+                <div class="bl_company_wordAndP_learnMore"><a href="article">Learn More ></a></div>
             </div>
             <div class="list-inline clearfix text-center">
                 <span><img src="./img/company2.png" width="114px" /></span>
                 企业资质
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海路333号，多年来，面向上海市区及南部杭州湾，依托地理优势水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
-                <div class="bl_company_wordAndP_learnMore">Learn More ></div>
+                <div class="bl_company_wordAndP_learnMore"><a href="article">Learn More ></a></div>
             </div>
             <div class="list-inline clearfix text-center">
                 <span><img src="./img/company3.png" /></span>
                 绿色博露
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
-                <div class="bl_company_wordAndP_learnMore clearfix">Learn More ></div>
+                <div class="bl_company_wordAndP_learnMore clearfix"><a href="article">Learn More ></a></div>
             </div>
         </div>
         <div class="clearfix" style="float: left;margin-top: 80px; margin-bottom: 40px;">
             <img src="./img/pic.jpg" width="70%" />
-            <div class="list-inline clearfix text-center" style="position: absolute;bottom:180px;right:50px;width: 400px;height: 300px;border: 1px solid black;
-				box-shadow: rgba(0,0,0,.8) 0 0 100px;background: white;">
-                <div>绿色博露</div>
-                <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
+            <div class="list-inline clearfix " style="position: absolute;bottom:90px;right:50px;width: 400px;height: 370px;
+				box-shadow: rgba(0,0,0,.5) 0 0 20px;background: white;">
+                <div style="font-weight: 600;margin: 15px 10px;color: #025600;">绿色博露</div>
+                <div style="font-weight: 550;margin-left: 10px;">上海博露农业有限公限公司</div>
+                <div class="text-center" style="width:300px;margin:auto;margin-top: 10px;line-height: 35px;">公司位于上海市奉贤区五四农场场中路333号，多年来，面向上海市区及南部杭州湾，依托地理优势，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
             </div>
         </div>
     </div>
-    <!-- 企业动态 -->
-    <div class="bl_EnterpriseDynamics" id="bl_EnterpriseDynamics">
-
-    </div>
-
-
-    <!-- 产品中心 -->
-    <div class="bl_product" id="bl_product">
-        <div class="text-center">
-            <ul class="bl_product_ul list-inline clearfix">
-                <li><img src="./img/bl_product_ul.png" width="70px" />博露大米</li>
-                <li><img src="./img/bl_product_ul.png" width="70px"/>博露草坪</li>
-                <li><img src="./img/bl_product_ul.png" width="70px"/>博露蔬果</li>
-                <li><img src="./img/bl_product_ul.png" width="70px"/>其他</li>
-            </ul>
-        </div>
-
-        <div class="bl_product_dami">
-            <div style="background: url(./img/bg2.jpg); background-size: 100% 100%;">
-                <div>
-                    <div class="dropdown bl_product_dami_left clearfix">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            大米季节
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" class="text-center">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown bl_product_dami_left clearfix">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            大米规格
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" class="text-center">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another </a></li>
-                            <li><a href="#">Somethin</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="dropdown bl_product_dami_left clearfix">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            包装选择
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" class="text-center">
-                            <li><a href="#">精致牛皮袋装</a></li>
-                            <li><a href="#">居家塑料袋装</a></li>
-                            <li><a href="#">高档礼盒袋装</a></li>
-                            <li><a href="#">文艺布袋袋装</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center bl_product_dami_right">
-                <ul>
-                    <li>博露大米</li>
-                    <li>好啊号好啊后哦啊哈后好好好哦哈后哦哈哈啊达瓦达瓦达瓦达瓦好啊号好啊后哦啊哈后好好好哦哈后哦哈哈啊达瓦达瓦达瓦达瓦好啊号好啊后哦啊哈后好好好哦哈后哦哈哈啊达瓦达瓦达瓦达瓦好啊号好啊后哦啊哈后好好好哦哈后哦哈哈啊达瓦达瓦达瓦达瓦</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
     <!-- 博露商城 -->
     <div class="bl_mall"></div>
     <!-- 联系我们 -->
-
-    <div class="bl_contact" id="bl_contact">
-        <div></div>
-        <div>
-            <ul>
-                <li>联系我们</li>
-                <li>Contact Us</li>
-                <li>我们期待每个充满惊喜的明天，就像期待每个来自您的问候和建议，暴露认真对待每个为您服务的细节···</li>
-            </ul>
-        </div>
-        <div>
-            <ul class="list-inline clearfix bl_contact_ul text-center">
-                <li><img src="./img/bl_product_ul.png" width="70px" />联系公司</li>
-                <li><img src="./img/bl_product_ul.png" width="70px"/>公司地址</li>
-                <li><img src="./img/bl_product_ul.png" width="70px"/>意见反馈</li>
-            </ul>
-        </div>
-
-        <div class="text-center bl_contact_company">
-            <ul>
-                <li>快来联系我们吧！</li>
-                <li><img src="./img/qq.png" alt="QQ" /></li>
-                <li><img src="./img/phone.png" alt="电话" /></li>
-                <li><img src="./img/wx.png" alt="微信" /></li>
-                <li><img src="./img/money.png" width="85px"/></li>
-            </ul>
-            <div>
-                <ul class="list-inline">
-                    <li><img src="./img/wxgzh.png" alt="" width="200px"/><div>微信公众号</div></li>
-                    <li><img src="./img/rgfw.png" alt="" width="200px"/><div>人工服务</div></li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
 </div>
 <!-- footer -->
 <div class="container footerBottom footerTop text-center">
@@ -298,6 +172,5 @@
         <li><img src="./img/bl_bottomRight.png" width="80%" /></li>
     </ul>
 </div>
-
 </body>
 </html>
