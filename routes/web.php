@@ -28,7 +28,7 @@ Route::group(['middleware' => 'cookie'], function () {
     Route::get('/bl_contact', function () {
         return view('bl_contact');
     });
-    Route::get('/article/{id}', function (\Illuminate\Http\Request $request) {
+    Route::get('/article/{id}', function (Illuminate\Http\Request $request) {
         return view('article', ['id' => $request->route('id')]);
     })->where(['id' => '[0-9]+']);
 
