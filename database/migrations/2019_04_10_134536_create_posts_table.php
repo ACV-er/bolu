@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->longText('content');
             $table->integer('type');
             $table->integer('priority');
+            $table->string('author');
             $table->timestamps();
         });
     }

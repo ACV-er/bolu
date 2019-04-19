@@ -125,19 +125,19 @@
                 <span><img src="./img/company1.png" width="120px" /></span>
                 1992-至今
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市奉贤区五四农场场中路333号，展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
-                <div class="bl_company_wordAndP_learnMore"><a href="article">Learn More ></a></div>
+                <div class="bl_company_wordAndP_learnMore"><a href="article/1">Learn More ></a></div>
             </div>
             <div class="list-inline clearfix text-center">
                 <span><img src="./img/company2.png" width="114px" /></span>
                 企业资质
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海路333号，多年来，面向上海市区及南部杭州湾，依托地理优势水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
-                <div class="bl_company_wordAndP_learnMore"><a href="article">Learn More ></a></div>
+                <div class="bl_company_wordAndP_learnMore"><a href="article/2">Learn More ></a></div>
             </div>
             <div class="list-inline clearfix text-center">
                 <span><img src="./img/company3.png" /></span>
                 绿色博露
                 <div>上海博露农业有限公司曾名为上海博露草坪有限公司。公司位于上海市，积极发展草坪、水稻，积极发扬传承水稻农耕文化、草坪美观文化等。我们坚信用自己的双手，努力为城市农业多做贡献。</div>
-                <div class="bl_company_wordAndP_learnMore clearfix"><a href="article">Learn More ></a></div>
+                <div class="bl_company_wordAndP_learnMore clearfix"><a href="article/3">Learn More ></a></div>
             </div>
         </div>
         <div class="clearfix" style="float: left;margin-top: 80px; margin-bottom: 40px;">

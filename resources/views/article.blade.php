@@ -145,30 +145,31 @@
         </ul>
     </div>
     <div></div>
+    @php
+        $post = \Illuminate\Support\Facades\DB::table('posts')->where('id', $id);
+    @endphp
     <div class="article_center list-inline clearfix">
         <div class="clearfix">
             <ul>
-                <li>水浒传</li>
-                <li class="text-center">108好汉大碗大碗大碗大碗大好汉大碗大汉大碗大碗大碗大碗大</li>
-                <li>2019年4月15日，黄伟东编</li>
-                <li><img src="./img/pic.jpg"></li>
-                <li class="text-center">全书通过描写梁山好汉反抗欺压、水泊梁山壮大和投降朝廷以及投降朝廷后镇压田虎，王庆，方腊等各路反抗宋朝政府的政治势力，最终走向悲惨失败的宏大故事，艺术地反映了中国历史上宋江起义从发生、发展直至失败的全过程，深刻揭示了起义的社会根源，满腔热情地歌颂了起义英雄的反抗斗争和他们的社会理想，也具体揭示了起义失败的内在历史原因。 [1]
-                    《水浒传》问世后，在社会上产生了巨大的影响，成了后世中国小说创作的典范。《水浒传》是中国历史上最早用白话文写成的章回小说之一，流传极广，脍炙人口；同时也是汉语文学中具备史诗特征的作品之一，对中国乃至东亚的叙事文学都有极其深远的影响。</li>
-                <li class="text-center">全书通过描写梁山好汉反抗欺压、水泊梁山壮大和投降朝廷以及投降朝廷后镇压田虎，王庆，方腊等各路反抗宋朝政府的政治势力，最终走向悲惨失败的宏大故事，艺术地反映了中国历史上宋江起义从发生、发展直至失败的全过程，深刻揭示了起义的社会根源，满腔热情地歌颂了起义英雄的反抗斗争和他们的社会理想，也具体揭示了起义失败的内在历史原因。 [1]
-                    《水浒传》问世后，在社会上产生了巨大的影响，成了后世中国小说创作的典范。《水浒传》是中国历史上最早用白话文写成的章回小说之一，流传极广，脍炙人口；同时也是汉语文学中具备史诗特征的作品之一，对中国乃至东亚的叙事文学都有极其深远的影响。</li>
+                <li>{{ $post->title }}</li>
+                <li class="text-center">{{ $post->description }}</li>
+                <li>{{ $post->created_at }}，{{ $post->author }}编</li>
+                <li><img src="{{ $post->img }}"></li>
+                <li class="text-center">{{ $post->content }}</li>
             </ul>
         </div>
         <div class="clearfix">
             <ul>
-                <li><img src="./img/pic.jpg"></li>
+                @php
+                    $posts = postInfo(0, 3, "priority", "desc");
+                    foreach ($posts as $post) {
+                        echo "<li><img src=\"$post->img\"></li>";
+                    }
+                @endphp
                 <li>
                     <div>相关信息</div>
                     <div>Related information</div>
                 </li>
-                <li><img src="./img/pic.jpg"></li>
-                <li></li>
-                <li><img src="./img/pic.jpg"></li>
-                <li></li>
             </ul>
         </div>
     </div>

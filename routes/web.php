@@ -28,9 +28,9 @@ Route::group(['middleware' => 'cookie'], function () {
     Route::get('/bl_contact', function () {
         return view('bl_contact');
     });
-    Route::get('/article', function () {
-        return view('article');
-    });
+    Route::get('/article/{id}', function (\Illuminate\Http\Request $request) {
+        return view('article', ['id' => $request->route('id')]);
+    })->where(['id' => '[0-9]+']);
 
     Route::get('/posts/{type}/{page}', "PostController@getPostList")->where(['id' => '[0-9]+', 'type' => '[0-9]+']);
 

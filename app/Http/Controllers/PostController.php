@@ -25,6 +25,7 @@ class PostController extends Controller
             'content' => "/[\s\S]+/",
             'type' => "/[\d]{1,2}/",
             'priority' => "/[\d]+/",
+            'author' => "/[\s\S]+/"
         );
         if(!$request->has(array_keys($mod))) {
             return msg(3, $request);
