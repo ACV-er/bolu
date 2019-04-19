@@ -146,7 +146,7 @@
     </div>
     <div></div>
     @php
-        $post = \Illuminate\Support\Facades\DB::table('posts')->where('id', $id);
+        $post = \Illuminate\Support\Facades\DB::table('posts')->where('id', $id)->get();
     @endphp
     <div class="article_center list-inline clearfix">
         <div class="clearfix">
