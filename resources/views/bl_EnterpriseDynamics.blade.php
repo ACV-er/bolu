@@ -22,13 +22,13 @@
     <div class="bl_top">
         <div class="row">
             <div><img src="./img/bl.png" height="90px" style="margin-top:10px;margin-left: 15px"></div>
-            <div class="clearfix bl_top_word"><img src="./img/wh.png" alt="" />意见反馈</div>
-            <div class="clearfix bl_top_word"><img src="./img/person.png" alt="" />员工登录</div>
-            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt="" />查询更多</div>
+            <div class="clearfix bl_top_word"><img src="./img/wh.png" alt=""/>意见反馈</div>
+            <div class="clearfix bl_top_word"><img src="./img/person.png" alt=""/>员工登录</div>
+            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt=""/>查询更多</div>
         </div>
         <div class="bl_top_nav">
             <ul class="list-inline clearfix bl_top_ul">
-                <li><a href="/" >首页</a></li>
+                <li><a href="/">首页</a></li>
                 <li class="bl_company_js"><a href="bl">公司简介</a></li>
                 <li class="bl_EnterpriseDynamics_js"><a href="bl_EnterpriseDynamics">企业动态</a></li>
                 <li class="bl_product_js"><a href="bl_product">产品中心</a></li>
@@ -52,7 +52,7 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="{{ $posts[0]->img  }}"/>
-                <div class="carousel-caption bl_company_banner_word ajax_company_1" >
+                <div class="carousel-caption bl_company_banner_word ajax_company_1">
 
                 </div>
             </div>
@@ -83,8 +83,6 @@
     </div>
 
 
-
-
     <div class="bl_EnterpriseDynamics" id="bl_EnterpriseDynamics">
         <script type="text/javascript" src="./jquery1.42.min.js"></script>
         <script src="./js/jquery.SuperSlide.2.1.3.js"></script>
@@ -110,27 +108,36 @@
         </div>
 
         <script type="text/javascript">
-            jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:3,trigger:"click"});
+            jQuery(".picScroll-left").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                autoPage: true,
+                effect: "left",
+                autoPlay: true,
+                vis: 3,
+                trigger: "click"
+            });
         </script>
     </div>
-
 
 
     <div class="container footerBottom footerTop text-center">
         <ul class="clearfix">
             <li>联系公司</li>
             <li>Follow Us</li>
-            <li><img src="./img/bl_bottomLeft.png" width="80%" /></li>
+            <li><img src="./img/bl_bottomLeft.png" width="80%"/></li>
         </ul>
         <ul class="footerBottom_center clearfix">
-            <li><a href="https://map.baidu.com/poi/%E4%B8%8A%E6%B5%B7%E5%8D%9A%E9%9C%B2%E5%86%9C%E4%B8%9A%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13551721.272409003,3593395.3294599773,14.73z?uid=6ee0102084ab5fee52e5c53c&primaryUid=6ee0102084ab5fee52e5c53c&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl" target="_blank">公司地址</a></li>
+            <li>
+                <a href="https://map.baidu.com/poi/%E4%B8%8A%E6%B5%B7%E5%8D%9A%E9%9C%B2%E5%86%9C%E4%B8%9A%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13551721.272409003,3593395.3294599773,14.73z?uid=6ee0102084ab5fee52e5c53c&primaryUid=6ee0102084ab5fee52e5c53c&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl"
+                   target="_blank">公司地址</a></li>
             <li>Company Address</li>
-            <li><img src="./img/bl_bottomCenter.png" />百度地图</li>
+            <li><img src="./img/bl_bottomCenter.png"/>百度地图</li>
         </ul>
         <ul class="footerBottom_right clearfix">
             <li>友情链接</li>
             <li>Friendly Connection</li>
-            <li><img src="./img/bl_bottomRight.png" width="80%" /></li>
+            <li><img src="./img/bl_bottomRight.png" width="80%"/></li>
         </ul>
     </div>
 </body>
