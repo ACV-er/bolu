@@ -52,20 +52,20 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="{{ $posts[0]->img  }}"/>
-                <div class="carousel-caption bl_company_banner_word ajax_company_1">
-
+                <div class="carousel-caption bl_company_banner_word ajax_company_1" >
+                    {{ $post[0]->content }}
                 </div>
             </div>
             <div class="item">
                 <img src="{{ $posts[1]->img  }}"/>
                 <div class="carousel-caption bl_company_banner_word ajax_company_2">
-
+                    {{ $post[1]->content }}
                 </div>
             </div>
             <div class="item">
                 <img src="{{ $posts[2]->img  }}"/>
                 <div class="carousel-caption bl_company_banner_word ajax_company_3">
-
+                    {{ $post[2]->content }}
                 </div>
             </div>
         </div>
