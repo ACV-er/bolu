@@ -92,8 +92,8 @@
                     @php
                         $posts = postInfo(0, 6, "priority", "desc");
                         foreach ($posts as $post) {
-                            echo "<li><div class=\"pic\"><a href=\"". env('APP_URL') ."/aricle/$post->id\" target=\"_blank\"><img src=\"$post->img\" /></a></div>".
-                                "<div class=\"title\"><a href=\"". env('APP_URL') ."/aricle/$post->id\" target=\"_blank\">$post->title</a></div>".
+                            echo "<li><div class=\"pic\"><a href=\"". env('APP_URL') ."/article/$post->id\" target=\"_blank\"><img src=\"$post->img\" /></a></div>".
+                                "<div class=\"title\"><a href=\"". env('APP_URL') ."/article/$post->id\" target=\"_blank\">$post->title</a></div>".
                                 "<div style=\"width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;\">$post->content</div></li>";
                         }
                     @endphp
