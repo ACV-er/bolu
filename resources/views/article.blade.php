@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>文章</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="./lib/html5shiv/html5shiv.min.js"></script>
-    <script src="./lib/respond/respond.js"></script>
+    <script src="/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="/lib/respond/respond.js"></script>
     <![endif]-->
-    <script src="./lib/jquery/jquery.min.js"></script>
-    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             background-color: #f6fcf9;
@@ -139,14 +139,14 @@
             <li><a href="bl_EnterpriseDynamics">企业动态</a></li>
             <li><a href="bl_product">产品中心</a></li>
             <li><a href="bl_contact">博露商城</a></li>
-            <li style="margin-left: 300px;"><a href="#"><img src="./img/wh.png" alt=""></a></li>
-            <li><a href="#"><img src="./img/person.png" alt=""></a></li>
-            <li><a href="#"><img src="./img/ss.png" alt=""></a></li>
+            <li style="margin-left: 300px;"><a href="#"><img src="/img/wh.png" alt=""></a></li>
+            <li><a href="#"><img src="/img/person.png" alt=""></a></li>
+            <li><a href="#"><img src="/img/ss.png" alt=""></a></li>
         </ul>
     </div>
     <div></div>
     @php
-        $post = Illuminate\Support\Facades\DB::table('posts')->where('id', $id)->get();
+        $post = Illuminate\Support\Facades\DB::table('posts')->where('id', $id)->get()[0];
     @endphp
     <div class="article_center list-inline clearfix">
         <div class="clearfix">
@@ -177,17 +177,17 @@
         <ul class="clearfix">
             <li>联系公司</li>
             <li>Follow Us</li>
-            <li><img src="./img/bl_bottomLeft.png" width="80%" /></li>
+            <li><img src="/img/bl_bottomLeft.png" width="80%" /></li>
         </ul>
         <ul class="footerBottom_center clearfix">
             <li><a href="https://map.baidu.com/poi/%E4%B8%8A%E6%B5%B7%E5%8D%9A%E9%9C%B2%E5%86%9C%E4%B8%9A%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13551721.272409003,3593395.3294599773,14.73z?uid=6ee0102084ab5fee52e5c53c&primaryUid=6ee0102084ab5fee52e5c53c&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&querytype=detailConInfo&da_src=shareurl" target="_blank">公司地址</a></li>
             <li>Company Address</li>
-            <li><img src="./img/bl_bottomCenter.png" />百度地图</li>
+            <li><img src="/img/bl_bottomCenter.png" />百度地图</li>
         </ul>
         <ul class="footerBottom_right clearfix">
             <li>友情链接</li>
             <li>Friendly Connection</li>
-            <li><img src="./img/bl_bottomRight.png" width="80%" /></li>
+            <li><img src="/img/bl_bottomRight.png" width="80%" /></li>
         </ul>
     </div>
 </div>

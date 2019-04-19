@@ -1,6 +1,9 @@
 .item img {
 	height: 100%;
-	
+}
+a:hover {
+	color: lightblue;
+	text-decoration: none;
 }
 .bl_cx_k {
 	display: none;
@@ -29,9 +32,12 @@
 	cursor: pointer;
 	margin-top: 40px;
 }
-.bl_top_word:hover {
-	color: red;
+.bl_top_word a,
+.bl_top_word a:focus {
+	color: black;
+	text-decoration: none;
 }
+
 .bl_top_nav {
 	margin: 0px auto;
 }
@@ -51,8 +57,7 @@
 	border-bottom: 5px solid rgba(148,175,188);
 }
 .bl_top_ul li a,
-.bl_top_ul li a:focus, 
-.bl_top_ul li a:hover {
+.bl_top_ul li a:focus {
 	color: black;
 	text-decoration: none;
 }
@@ -378,14 +383,14 @@ body{ background:#fff; font:normal 12px/22px 宋体;  }
 img{ border:0;}
 
 .picScroll-left{ width:1200px; overflow:hidden; position:relative;height: 400px;  margin-top: 30px;}
-.picScroll-left .hd{ overflow:hidden;  height:30px; padding:0 10px;margin-top: 50px; width: 200px;}
+.picScroll-left .hd{ overflow:hidden;margin-left: 500px; height:30px; padding:0 10px;margin-top: 50px; width: 200px;}
 .picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
-	 cursor:pointer; background:url(./img/arrow.png) no-repeat;}
+	 cursor:pointer; background:url(../img/arrow.png) no-repeat;}
 .picScroll-left .hd .next{ background-position:0 -50px;  }
 .picScroll-left .hd .prevStop{ background-position:-60px 0; }
 .picScroll-left .hd .nextStop{ background-position:-60px -50px; }
-.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1;margin-right: 800px;}
-.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url(./img/icoCircle.gif) 0 -9px no-repeat; }
+.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1;}
+.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url(../img/icoCircle.gif) 0 -9px no-repeat; }
 .picScroll-left .hd ul li.on{ background-position:0 0; }
 .picScroll-left .bd{ padding:10px;   }
 .picScroll-left .bd ul{ overflow:hidden; zoom:1; }
@@ -415,4 +420,7 @@ img{ border:0;}
 } */
 .bl_contact_company {
 	display: none;
+}
+.bl_contact_company_Feedback {
+	display: block;
 }
