@@ -1,5 +1,7 @@
-.item img {
-	height: 100%;
+.item{
+	height: 485px;
+	width: 1200px;
+	overflow: hidden;
 }
 a:hover {
 	color: lightblue;
@@ -37,7 +39,9 @@ a:hover {
 	color: black;
 	text-decoration: none;
 }
-
+.bl_top_word1 a:hover {
+	color: white;
+}
 .bl_top_nav {
 	margin: 0px auto;
 }
@@ -66,14 +70,21 @@ a:hover {
 }
 /* company */
 .bl_company_banner_word {
-	background: rgba(0,0,0,0.5);
+	
 }
 .carousel-caption {
 	position: absolute;
 	top: 70px;
 	left: 120px;
-	width: 400px;
+	width: 500px;
 	height: 300px;
+	text-align: left;
+}
+.bl_company_word {
+	background-color: #6ae2ae;
+	margin-top: 30px;
+	padding-bottom: 20px;
+	box-shadow:  0px 0px 0px red,0px 0px 0px red,0px 0px 0px red,-1px 10px 50px rgba(0,0,0,.5) ;
 }
 .bl_company_word > div {
 	float:left;
@@ -84,7 +95,6 @@ a:hover {
 	width: 400px;
 	height: 380px;
 	border-radius: 30px;
-	border: 1px solid black;
 	margin-left:80px;
 }
 .bl_company_word ul {
@@ -96,7 +106,6 @@ a:hover {
 .bl_company_word ul li {
 	font-size: 25px;
 	width: 500px;
-	
 }
 .bl_company_word ul li:nth-child(1) {
 	font-size: 40px;
@@ -112,6 +121,8 @@ a:hover {
 
 .bl_company_wordAndP {
 	margin-top: 30px;
+	line-height: 30px;
+	font-weight: 100;
 }
 .bl_company_wordAndP > div {
 	float: left;
@@ -124,16 +135,31 @@ a:hover {
 	position: relative;
 	margin-top: 40px;
 }
+.bl_company_wordAndP img {
+	margin: 5px auto;
+}
 .bl_company_wordAndP > div > div {
-	font-size: 20px;
+	font-size: 18px;
+	width: 260px;
+	margin: auto auto;
 }
 .bl_company_wordAndP_learnMore {
 	font-size: 20px;
 	cursor: pointer;
-	bottom: 0px;
+	bottom: 5px;
 	position: absolute;
-	margin-left: 80px;
-	margin-bottom: 15px;
+	left: 20px;
+	font-weight: 500;
+	font-family: Mongolian Baiti;
+}
+.bl_company_wordAndP_learnMore1 {
+	font-size: 20px;
+	cursor: pointer;
+	bottom: 5px;
+	position: absolute;
+	right: 15px;
+	font-weight: 500;
+	font-family: Mongolian Baiti;
 }
 .bl_company_wordAndP_learnMore a,
 .bl_company_wordAndP_learnMore a:focus {
@@ -165,7 +191,7 @@ a:hover {
 	position: relative;
 }
 .bl_product_dami > div:nth-child(1) {
-	height: 650px;
+	height: 800px;
 }
 .bl_product_dami > div:nth-child(1) > div {
 	margin-left: 100px;
@@ -173,7 +199,6 @@ a:hover {
 .bl_product_dami > div:nth-child(1) > div:nth-child(1) {
     border-left: 1px solid white;
 	height: 650px;
-	
 }
 .bl_product_dami > div:nth-child(1) div button {
     width: 170px;
@@ -220,11 +245,13 @@ a:hover {
 	font-size: 20px;
 	margin-left: 50px;
     margin-top: 10px;
-
 }
 .bl_product_dami_right ul:nth-child(2) li > div > div div {
 	margin-top: 10px;
 	letter-spacing: 3px;
+}
+.bl_product_dami_left ul {
+	background-color: #51c791;
 }
 /* contact */
 .bl_contact > div:nth-child(1) {
@@ -317,6 +344,16 @@ a:hover {
 	font-weight: 100;	
 	padding-top: 20px;
 }
+.bl_contact_company_Feedback > div:nth-child(1) > ul li {
+	margin-top: 10px;
+}
+.bl_contact_company_Feedback > div:nth-child(1) > ul li:nth-child(2n) {
+	font-weight: 10;
+}
+.bl_contact_company_Feedback > div:nth-child(1) > ul li:nth-child(3),
+.bl_contact_company_Feedback > div:nth-child(1) > ul li:nth-child(5) {
+	font-size: 18px;
+}
 .bl_contact_company_Feedback > div:nth-child(2) {
 	width: 680px;
 	float: right;
@@ -382,21 +419,21 @@ a:hover {
 body{ background:#fff; font:normal 12px/22px 宋体;  }
 img{ border:0;}
 
-.picScroll-left{ width:1200px; overflow:hidden; position:relative;height: 400px;  margin-top: 30px;}
-.picScroll-left .hd{ overflow:hidden;margin-left: 500px; height:30px; padding:0 10px;margin-top: 50px; width: 200px;}
-.picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
-	 cursor:pointer; background:url(../img/arrow.png) no-repeat;}
+.picScroll-left{ width:1200px; overflow:hidden; position:relative;height: 460px;  margin-top: 30px;}
+.picScroll-left .hd{ overflow:hidden;margin-left: 500px; height:60px; padding:0 10px;margin-top: 40px; width: 200px;}
+.picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:25px; height:40px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+	 cursor:pointer; font-size: 30px;}
 .picScroll-left .hd .next{ background-position:0 -50px;  }
 .picScroll-left .hd .prevStop{ background-position:-60px 0; }
 .picScroll-left .hd .nextStop{ background-position:-60px -50px; }
-.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1;}
-.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url(../img/icoCircle.gif) 0 -9px no-repeat; }
+.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:17px; zoom:1;}
+.picScroll-left .hd ul li{ float:left; width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url(../img/icoCircle.gif) 0 -9px no-repeat; }
 .picScroll-left .hd ul li.on{ background-position:0 0; }
 .picScroll-left .bd{ padding:10px;   }
 .picScroll-left .bd ul{ overflow:hidden; zoom:1; }
 .picScroll-left .bd ul li{ margin:0 8px; float:left; display:inline; overflow:hidden; text-align:center;margin-left: 70px;}
 .picScroll-left .bd ul li .pic{ text-align:center;}
-.picScroll-left .bd ul li .pic img{ width:300px; height:150px; display:block;  padding:2px; border:1px solid #ccc;margin: 0px auto;}
+.picScroll-left .bd ul li .pic img{ width:300px; height:230px; display:block;  padding:2px; border:1px solid #ccc;margin: 0px auto;}
 .picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
 .picScroll-left .bd ul li .title{ line-height:24px;   }
 /* 测试 */

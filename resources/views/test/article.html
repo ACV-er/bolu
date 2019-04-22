@@ -11,6 +11,14 @@
     <![endif]-->
     <script src="./lib/jquery/jquery.min.js"></script>
 	<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.point_js').on('mouseover',function(){
+				$(this).animate({"background-color":"red"},1000);
+				console.log(1);
+			});
+		})
+	</script>
 	<style type="text/css">
 		body {
 			background-color: #f6fcf9;
@@ -81,21 +89,34 @@
 		}
 		.article_center > div:nth-child(2) {
 			width: 350px;
-			height: 1200px;
+			height: 1300px;
 			background-color: #def3ea;
 			float: right;
 			padding-top: 20px;
 		}
-		.article_center > div:nth-child(2) ul{
+		.article_center > div:nth-child(2) > ul{
 			padding-left: 20px;
 			font-size: 25px;
 		}
-		.article_center > div:nth-child(2) ul li,
-		.article_center > div:nth-child(2) ul img {
+		.article_center > div:nth-child(2) > ul > li,
+		.article_center > div:nth-child(2) > ul > img {
 			width: 310px;
 			height: 200px;
 		}
-		.article_center > div:nth-child(2) ul li:nth-child(2n) {
+		.article_center > div:nth-child(2) > ul > li ul {
+			padding: 0px;
+		}
+		.article_center > div:nth-child(2) > ul > li > ul > li {
+			padding-top: 20px;
+		}
+		.point_js {
+			width: 180px;
+			height: 40px;
+			border-radius: 20px;
+			background-color: white;
+			margin-left: 65px;
+		}
+		.article_center > div:nth-child(2) > ul > li:nth-child(2n) {
 			padding-top: 50px;
 		}
 		.footerTop ul {
@@ -139,6 +160,7 @@
 				<li><a href="bl_EnterpriseDynamics.html">企业动态</a></li>
 				<li><a href="bl_product.html">产品中心</a></li>
 				<li><a href="bl_contact.html">博露商城</a></li>
+				<li><a href="bl_contact.html">联系我们</a></li>
                 <li style="margin-left: 300px;"><a href="#"><img src="./img/wh.png" alt=""></a></li>
                 <li><a href="#"><img src="./img/person.png" alt=""></a></li>
                 <li><a href="#"><img src="./img/ss.png" alt=""></a></li>	
@@ -148,27 +170,52 @@
 		<div class="article_center list-inline clearfix">
 			<div class="clearfix">
 				<ul>
-					<li>水浒传</li>
-					<li class="text-center">108好汉大碗大碗大碗大碗大好汉大碗大汉大碗大碗大碗大碗大</li>
-					<li>2019年4月15日，黄伟东编</li>
+					<li>重点新闻</li>
+					<li class="text-center">国家农业部重点项目工作推进会在五四公司召开</li>
+					<li>2019年4月12日 廖丹芬 摄</li>
 					<li><img src="./img/pic.jpg"></li>
-					<li class="text-center">全书通过描写梁山好汉反抗欺压、水泊梁山壮大和投降朝廷以及投降朝廷后镇压田虎，王庆，方腊等各路反抗宋朝政府的政治势力，最终走向悲惨失败的宏大故事，艺术地反映了中国历史上宋江起义从发生、发展直至失败的全过程，深刻揭示了起义的社会根源，满腔热情地歌颂了起义英雄的反抗斗争和他们的社会理想，也具体揭示了起义失败的内在历史原因。 [1] 
-					《水浒传》问世后，在社会上产生了巨大的影响，成了后世中国小说创作的典范。《水浒传》是中国历史上最早用白话文写成的章回小说之一，流传极广，脍炙人口；同时也是汉语文学中具备史诗特征的作品之一，对中国乃至东亚的叙事文学都有极其深远的影响。</li>
-					<li class="text-center">全书通过描写梁山好汉反抗欺压、水泊梁山壮大和投降朝廷以及投降朝廷后镇压田虎，王庆，方腊等各路反抗宋朝政府的政治势力，最终走向悲惨失败的宏大故事，艺术地反映了中国历史上宋江起义从发生、发展直至失败的全过程，深刻揭示了起义的社会根源，满腔热情地歌颂了起义英雄的反抗斗争和他们的社会理想，也具体揭示了起义失败的内在历史原因。 [1] 
-					《水浒传》问世后，在社会上产生了巨大的影响，成了后世中国小说创作的典范。《水浒传》是中国历史上最早用白话文写成的章回小说之一，流传极广，脍炙人口；同时也是汉语文学中具备史诗特征的作品之一，对中国乃至东亚的叙事文学都有极其深远的影响。</li>
+					<li style="text-indent: 50px">4月12日上午，五四星辉蔬菜所属上海博露农业有限公司作为项目课题《都市农区面源污染防控与生态功能提升技术示范》的示范基地，迎来国家农业部重点研发项目课题组梁永超教授等领导、专家一行莅临五四公司召开长三角镉砷和面源污染农田综合防治与修复技术示范工作推进会，对项目工作进行指导论证。五四公司总农艺师顾巧英，企业发展部及博露农业相关负责人出席会议。</li>
+					<li style="text-indent: 50px">公司总农艺师顾巧英对领导、专家组一行的到来表示欢迎，并围绕“殷实农场”战略目标及“两高”产业定位系统介绍公司发展沿革、产业布局、旗下品牌及著名商标、发展规划理念等方面情况。她表示，五四公司在现代农业方面提出了要以绿色发展为着眼点，切实增强耕地和环境保护意识，进一步调整种植业结构，建立和完善轮作休耕制度，自觉保护好耕地资源的目标。根据上海市都市现代绿色农业发展三年行动计划和光明食品集团“沃土计划”实施要求，公司对下属博露公司提出了进一步调整秋冬种植业茬口布局，按照集中连片，科学养地的要求，选择观赏性油菜和紫云英等绿肥品种，扩大绿肥和深翻面积，并探索多元化种植组合方式，优化水稻等作物品种结构，减少化肥农药使用，提高耕地质量的要求。而这此次《长三角镉砷和面源污染农田综合防治与修复技术示范》项目对于五四现代农业绿色发展具有指导意义！</li>
+					<li style="text-indent: 50px">
+					会上，梁永超教授就年度管理会议精神进行了详尽阐述。来自南京大学、浙江大学、交通大学等研究院校的专家、骨干就《长三角重金属和面源污染诊断监测与风险评价》、《城郊镉砷污染农田防治与安全利用技术示范》等六个项目课题的进展及工作安排进行了详尽汇报和论证研讨，为后续工作的持续推进指明了方向，奠定了扎实的基础。
+					</li>
 				</ul>
 			</div>
 			<div class="clearfix">
-				<ul>
-					<li><img src="./img/pic.jpg"></li>
+				<ul class="text-center">
+					<li>
+						<ul style="background-color: #4188a6;width: 310px;height: 200px;color: white;">
+							<li style="font-size: 30px;">意见反馈</li>
+							<li style="font-size: 17px;">您的建议对博露发展非常重要</li>
+							<li style="color: black;border-radius: 20px;"><a href="bl_contact.html#Feedback"><div class="point_js">point here</div></a></li>
+						</ul>
+					</li>
 					<li>
 						<div>相关信息</div>
 						<div>Related information</div>
 					</li>
-					<li><img src="./img/pic.jpg"></li>
-					<li></li>
-					<li><img src="./img/pic.jpg"></li>
-					<li></li>
+					<li>
+						<ul style="background-color: #4188a6;width: 310px;height: 200px;color: white;">
+							<li style="font-size: 30px;">意见反馈</li>
+							<li style="font-size: 17px;">您的建议对博露发展非常重要</li>
+							<li style="color: black;border-radius: 20px;"><a href="bl_contact.html#Feedback" ><div class="point_js">point here</div></a></li>
+						</ul>
+					</li>
+					<li>
+						<div>相关信息</div>
+						<div>Related information</div>
+					</li>
+					<li>
+						<ul style="background-color: #4188a6;width: 310px;height: 200px;color: white;">
+							<li style="font-size: 30px;">意见反馈</li>
+							<li style="font-size: 17px;">您的建议对博露发展非常重要</li>
+							<li style="color: black;border-radius: 20px;"><a href="bl_contact.html#Feedback"><div class="point_js">point here</div></a></li>
+						</ul>
+					</li>
+					<li>
+						<div>相关信息</div>
+						<div>Related information</div>
+					</li7
 				</ul>
 			</div>
 		</div>
@@ -190,5 +237,6 @@
 			</ul>
 		</div>
 	</div>
+	
 </body>
 </html>

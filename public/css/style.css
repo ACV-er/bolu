@@ -164,9 +164,8 @@ h2{ color: #7f8c8d; font-family: Neucha, Arial, sans serif; font-size:18px; marg
 	transition: all 0.3s cubic-bezier(1,.01,.32,1);	
 }
 .fa_img {
-	width: 400px;
+	width: 270px;
 	height: 380px;
-	border-radius: 30px;
 }
 
 

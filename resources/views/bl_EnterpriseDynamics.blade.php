@@ -22,9 +22,12 @@
     <div class="bl_top">
         <div class="row">
             <div class="bl_icon"><img src="./img/bl.png" height="90px" style="margin-top:10px;margin-left: 15px"></div>
-            <div class="clearfix bl_top_word"><img src="./img/wh.png" alt="" /><a href="bl_contact.html#Feedback">意见反馈</a></div>
-            <div class="clearfix bl_top_word"><img src="./img/person.png" alt="" />员工登录</div>
-            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt="" /><span class="bl_cx">查询更多</span><input type="" placeholder="请输入你想搜索的内容···" class="bl_cx_k clearfix"></div>
+            <div class="clearfix bl_top_word"><img src="./img/wh.png" alt=""/><a
+                    href="bl_contact#Feedback">意见反馈</a></div>
+            <div class="clearfix bl_top_word"><img src="./img/person.png" alt=""/><a href="#">员工登录</a></div>
+            <div class="clearfix bl_top_word"><img src="./img/ss.png" alt=""/><span class="bl_cx"><a
+                        href="#">查询更多</a></span><input type="" placeholder="请输入你想搜索的内容···" class="bl_cx_k clearfix">
+            </div>
         </div>
         <div class="bl_top_nav">
             <ul class="list-inline clearfix bl_top_ul">
@@ -52,7 +55,7 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="{{ $posts[0]->img  }}"/>
-                <div class="carousel-caption bl_company_banner_word ajax_company_1" >
+                <div class="carousel-caption bl_company_banner_word ajax_company_1">
                     {{ $posts[0]->content }}
                 </div>
             </div>
@@ -82,9 +85,7 @@
         </a>
     </div>
 
-
     <div class="bl_EnterpriseDynamics" id="bl_EnterpriseDynamics">
-        <script type="text/javascript" src="./jquery1.42.min.js"></script>
         <script src="./js/jquery.SuperSlide.2.1.3.js"></script>
         <div class="picScroll-left">
             <div class="bd">
@@ -92,32 +93,21 @@
                     @php
                         $posts = postInfo(0, 6, "priority", "desc");
                         foreach ($posts as $post) {
-                            echo "<li><div class=\"pic\"><a href=\"". env('APP_URL') ."/article/$post->id\" target=\"_blank\"><img src=\"$post->img\" /></a></div>".
-                                "<div class=\"title\"><a href=\"". env('APP_URL') ."/article/$post->id\" target=\"_blank\">$post->title</a></div>".
-                                "<div style=\"width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;\">$post->content</div></li>";
-                        }
+                        echo "<li><div class=\"pic\"><a href=\"". env('APP_URL') ."/article/$post->id\" target=\"_blank\"><img src=\"$post->img\" /></a></div>".
+                        "<div class=\"title\"><a href=\"". env('APP_URL') ."/article/$post->id\" target=\"_blank\">$post->title</a></div>".
+                        "<div style=\"width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;\">$post->content</div></li>";
+                }
                     @endphp
                 </ul>
             </div>
             <div class="hd">
-                <a class="next"></a>
+                <a class="next">></a>
                 <ul></ul>
-                <a class="prev"></a>
-                <span class="pageState"></span>
+                <a class="prev"><</a>
             </div>
         </div>
 
-        <script type="text/javascript">
-            jQuery(".picScroll-left").slide({
-                titCell: ".hd ul",
-                mainCell: ".bd ul",
-                autoPage: true,
-                effect: "left",
-                autoPlay: true,
-                vis: 3,
-                trigger: "click"
-            });
-        </script>
+
     </div>
 
 
@@ -140,5 +130,20 @@
             <li><img src="./img/bl_bottomRight.png" width="80%"/></li>
         </ul>
     </div>
+    <script type="text/javascript">
+        $(function () {
+            jQuery(".picScroll-left").slide({
+                titCell: ".hd ul",
+                mainCell: ".bd ul",
+                autoPage: true,
+                effect: "left",
+                autoPlay: true,
+                vis: 3,
+                trigger: "click"
+            });
+        })
+
+    </script>
+    <script type="text/javascript" src="./js/load.js"></script>
 </body>
 </html>

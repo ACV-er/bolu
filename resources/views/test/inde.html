@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<script type="text/javascript" src="./jquery1.42.min.js"></script>
+<script type="text/javascript" src="./jquery.SuperSlide.2.1.3.js"></script>
+<style type="text/css">
+body{ background:#fff; font:normal 12px/22px 宋体;  }
+img{ border:0;}
+
+
+/* 本例子css */
+.picScroll-left{ width:1200px; overflow:hidden; position:relative;  border:1px solid #ccc;height: 350px;  }
+.picScroll-left .hd{ overflow:hidden;  height:30px; padding:0 10px;margin-top: 80px; }
+.picScroll-left .hd .prev,.picScroll-left .hd .next{ display:block;  width:5px; height:9px; float:right; margin-right:5px; margin-top:10px;  overflow:hidden;
+	 cursor:pointer; background:url("images/arrow.png") no-repeat;}
+	 .picScroll-left .hd .prev {
+	 	margin-top: 0px;
+	 }
+.picScroll-left .hd .next{ background-position:0 -50px;  }
+.picScroll-left .hd .prevStop{ background-position:-60px 0; }
+.picScroll-left .hd .nextStop{ background-position:-60px -50px; }
+.picScroll-left .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px; zoom:1; margin-right: 500px;}
+.picScroll-left .hd ul li{ float:left;  width:9px; height:9px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; background:url("images/icoCircle.gif") 0 -9px no-repeat; }
+.picScroll-left .hd ul li.on{ background-position:0 0; }
+.picScroll-left .bd{ padding:10px; width: 1200px;  }
+.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+.picScroll-left .bd ul li{ margin:0 8px; float:left; display:inline; overflow:hidden; text-align:center;  }
+.picScroll-left .bd ul li .pic{ text-align:center; margin-left: 20px;	}
+.picScroll-left .bd ul li .pic img{ width:300px; height:150px; display:block;  padding:2px; border:1px solid #ccc;margin: 0px auto;}
+.picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+.picScroll-left .bd ul li .title{ line-height:24px;   }
+</style>
+<body>
+			<div class="picScroll-left">
+				<div class="bd">
+					<ul class="picList text-center">
+						<li>
+							<div class="pic"><a href="#" target="_blank"><img src="images/pic1.jpg" /></a></div>
+							<div class="title"><a href="#" target="_blank">效果图1</a></div>
+							<div style="width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;">吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫</div>
+						</li>
+						<li>
+							<div class="pic"><a href="#" target="_blank"><img src="images/pic2.jpg" /></a></div>
+							<div class="title"><a href="#" target="_blank">效果图2</a></div>
+							<div style="width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;">吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫</div>
+						</li>
+						<li>
+							<div class="pic"><a href="#" target="_blank"><img src="images/pic3.jpg" /></a></div>
+							<div class="title"><a href="#" target="_blank">效果图3</a></div>
+							<div style="width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;">吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫</div>
+						</li>
+						<li>
+							<div class="pic"><a href="#" target="_blank"><img src="images/pic4.jpg" /></a></div>
+							<div class="title"><a href="#" target="_blank">效果图4</a></div>
+							<div style="width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;">吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫</div>
+						</li>
+						<li>
+							<div class="pic"><a href="#" target="_blank"><img src="images/pic5.jpg" /></a></div>
+							<div class="title"><a href="#" target="_blank">效果图5</a></div>
+							<div style="width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;">吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫</div>
+						</li>
+						<li>
+							<div class="pic"><a href="#" target="_blank"><img src="images/pic6.jpg" /></a></div>
+							<div class="title"><a href="#" target="_blank">效果图6</a></div>
+							<div style="width: 200px;word-wrap : break-word;height: 90px;margin: 0px 0px 0px 50px;">吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫吓到我到我到我dawdawdaw到大师大卫</div>
+						</li>
+					</ul>
+				</div>
+				<div class="hd">
+					<a class="next"></a>
+					<ul></ul>
+					<a class="prev"></a>
+					<span class="pageState"></span>
+				</div>
+			</div>
+			
+			<script type="text/javascript">
+				$(function(){
+					jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:3,trigger:"click"});
+				})
+			
+		    </script>
+	<script type="text/javascript">
+		/*$(function () {
+			$.ajax({
+				type: 'post',
+				url: 'https://bolu.acver.xyz/post',
+				dataType:'json',
+				data: {
+					"type":1,
+					"img":"base64",
+					"priority":6,
+					"title":"简单标题",
+					"description":"简单摘要",
+					"content":"鸡蛋鸡蛋",
+					"_method":"put"
+				},
+				success:function (data) {
+					console.log(data);
+				}
+			})
+		})*/
+	</script>
+</body>
+</html>
